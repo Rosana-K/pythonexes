@@ -1,0 +1,16 @@
+version: "3"
+services:
+  server:
+    restart: always
+    build: .
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "1"
+    ports:
+      - 5000:5000
+      - 5001:5001
+    volumes:
+      - .:/app
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
